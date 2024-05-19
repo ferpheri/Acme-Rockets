@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 @layer utilities {
   .section-min-height {
     min-height: calc(100vh - 68px);
@@ -9,5 +11,17 @@
 
   .toggle-btn {
     @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg];
+  }
+
+  .theme-toggle-btn {
+    @apply bg-teal-600 text-white flex items-center justify-center w-10 h-10 transition-all duration-300 ease-in-out transform hover:bg-teal-500 focus:outline-none;
+  }
+
+  .theme-toggle-btn .material-icons {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+
+  .dark .theme-toggle-btn .material-icons {
+    @apply rotate-180;
   }
 }
